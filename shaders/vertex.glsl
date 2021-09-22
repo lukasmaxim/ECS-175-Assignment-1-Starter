@@ -1,5 +1,7 @@
-// an attribute will receive data from a buffer
-attribute vec2 a_position;
+#version 300 es
+
+// an 'in' variable will receive data from a buffer
+in vec2 a_position;
 
 uniform vec2 u_resolution;
 uniform float u_pointSize;

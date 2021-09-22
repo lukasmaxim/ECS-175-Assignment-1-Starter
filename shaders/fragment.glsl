@@ -1,11 +1,14 @@
-// Fragment shaders don't have a default precision so we need
-// to pick one. mediump is a good default. It means "medium precision".
+#version 300 es
+
+// fragment shaders don't have a default precision so we need
+// to pick one. mediump is a good default. it means "medium precision".
 precision mediump float;
 
 uniform vec4 u_color;
 
+// with webgl 2, we now have to define an out that will be the color of the fragment
+out vec4 fragColor;
+
 void main(void) {
-    // gl_FragColor is a special variable a fragment shader
-    // is responsible for setting the output color
-    gl_FragColor = u_color;
+    fragColor = u_color;
 }
