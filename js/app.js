@@ -6,8 +6,10 @@ import AppState from "./appstate.js"
 
 class App
 {
+
     constructor( )
     {
+
         console.log( "Initializing App" )
 
         // canvas & gl
@@ -20,7 +22,7 @@ class App
         this.shader = new Shader( this.gl, "../shaders/vertex.glsl", "../shaders/fragment.glsl" )
 
         // objects
-        // TODO: create a structure to store your objects (points, triangles, etc.)
+        // TODO create a structure to store your objects (points, triangles, etc.)
 
         // resize handling
         this.resizeToDisplay( )
@@ -32,58 +34,92 @@ class App
     }
 
     /** 
-     * Resizes camera and canvas to pixel size corrected display size
+     * Resizes canvas to pixel-size-corrected display size
      */
     resizeToDisplay( )
     {
-        // TODO: handle window resizes so that your objects scale accordingly
-    }
 
-    addObject( object )
-    {
-        // TODO: add a new drawable object to your collection of objects
-    }
+        // TODO handle window resizes so that your objects scale accordingly
 
-    clearCanvas( )
-    {
-        // TODO: clear the scene and canvas
-
-        console.log( "Cleared the canvas." )
     }
 
     /**
-     * Initializes WebGL and sets settings
-     * @returns {null|*}
+     * Adds objects to internal data structure
+     * @param { Drawable } object The object to add to your data structure
+     */
+    addObject( object )
+    {
+
+        // TODO
+
+    }
+
+    /**
+     * Clears scene and canvas
+     */
+    clearCanvas( )
+    {
+
+        // TODO
+
+        console.log( "Cleared scene and canvas." )
+
+    }
+
+    /**
+     * Initializes webgl2 with settings
+     * @returns { WebGL2RenderingContext | null }
      */
     initGl( )
     {
-        // TODO: initialize webgl2 here
+
+        // TODO
+
         let gl
 
         return gl
+
     }
 
+    /**
+     * Starts render loop
+     */
     start( )
     {
+
         requestAnimationFrame( ( ) =>
         {
+
             this.update( )
+
         } )
+
     }
 
+    /**
+     * Called every frame, triggers input and app state update and renders a frame
+     */
     update( )
     {
+
         this.app_state.update( )
-        //this.render( )
         Input.update( )
+        this.render( )
         requestAnimationFrame( ( ) =>
         {
+
             this.update( )
+
         } )
+
     }
 
+    /**
+     * Main render loop
+     */
     render( )
     {
+
         // clear the screen
         this.gl.viewport( 0, 0, this.gl.canvas.width, this.gl.canvas.height )
         this.gl.clear( this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT )
@@ -91,7 +127,8 @@ class App
         // activate the shader
         this.shader.use( )
 
-        // TODO: draw your objects here
+        // TODO draw your objects here
+
     }
 }
 

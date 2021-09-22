@@ -1,3 +1,5 @@
+'use strict'
+
 import
 {
     loadExternalFile
@@ -6,8 +8,10 @@ from "./utils.js"
 
 class Shader
 {
+
     constructor( gl, vertex_file, fragment_file )
     {
+
         this.gl = gl
         let vert = gl.createShader( gl.VERTEX_SHADER )
         let frag = gl.createShader( gl.FRAGMENT_SHADER )
@@ -30,7 +34,6 @@ class Shader
             gl.deleteShader( frag )
         }
 
-
         gl.attachShader( program, vert )
         gl.attachShader( program, frag )
         gl.linkProgram( program )
@@ -42,55 +45,108 @@ class Shader
         }
 
         this.program = program
+
     }
 
+    /**
+     * Tell the webgl rendering context to use this.program as shaderprogram
+     */
     use( )
     {
+
         this.gl.useProgram( this.program )
+        
     }
 
+    /**
+     * Gets an attribute location by name
+     * @param { String } name The name of the attribute
+     * @returns {} TODO The location of the attribute
+     */
     getAttributeLocation( name )
     {
+
         return this.gl.getAttribLocation( this.program, name )
+
     }
 
+    /**
+     * Gets a uniform location by name
+     * @param { String } name The name of the uniform
+     * @returns {} TODO The location of the uniform
+     */
     getUniformLocation( name )
     {
+
         return this.gl.getUniformLocation( this.program, name )
+
     }
 
+    /**
+     * Sets a float scalar uniform by location name
+     * @param { String } name The name of the uniform
+     * @param { Array<Number> } value The value of the scalar
+     */
     setUniform1f( name, value )
     {
+
         this.gl.uniform1f( this.getUniformLocation( name ), value )
+
     }
 
+    /**
+     * Sets a 2 dim float vector uniform by location name
+     * @param { String } name The name of the uniform
+     * @param { Array<Number> } value The value of the vector
+     */
     setUniform2f( name, value )
     {
+
         this.gl.uniform2fv( this.getUniformLocation( name ), value )
+
     }
 
+    /**
+     * Sets a 3 dim float vector uniform by location name
+     * @param { String } name The name of the uniform
+     * @param { Array<Number> } value The value of the vector
+     */
     setUniform3f( name, value )
     {
+
         this.gl.uniform3fv( this.getUniformLocation( name ), value )
+
     }
 
+    /**
+     * Sets a scalar uniform integer by location name
+     * @param { String } name The name of the uniform
+     * @param { Number } value The value of the scalar
+     */
     setUniform1i( name, value )
     {
+
         this.gl.uniform1i( this.getUniformLocation( name ), value )
+
     }
 
-    setUniform4x4f( name, value )
-    {
-        this.gl.uniformMatrix4fv( this.getUniformLocation( name ), false, value )
-    }
-
+    /**
+     * TODO
+     * @param { String } name The name of the attribute
+     * @param { WebGLBuffer } buffer The webgl buffer
+     * @param { Number } num_components TODO
+     * @param { Number } stride TODO
+     * @param { Number } offset TODO
+     */
     setArrayBuffer( name, buffer, num_components, stride = 0, offset = 0 )
     {
+
         const location = this.getAttributeLocation( name )
 
         this.gl.enableVertexAttribArray( location )
         this.gl.bindBuffer( this.gl.ARRAY_BUFFER, buffer )
         this.gl.vertexAttribPointer( location, num_components, this.gl.FLOAT, false, stride, offset )
+        
 
     }
 
