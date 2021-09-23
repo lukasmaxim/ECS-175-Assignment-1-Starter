@@ -51,9 +51,9 @@ class AppState
         }
 
         // Update UI with default values
-        this.updateUI( "object_to_draw", "pointDrawMode" )
-        this.updateUI( "color_mode", "blueColorMode" )
-        this.updateUI( "draw_mode", "filledDrawMode" )
+        this.updateUI( "object_to_draw", "point" )
+        this.updateUI( "color_mode", "blue" )
+        this.updateUI( "draw_mode", "filled" )
     }
 
     /**

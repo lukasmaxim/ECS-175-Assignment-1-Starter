@@ -5,13 +5,13 @@
 precision mediump float;
 
 // a uniform can be seen as a constant that you set once
-uniform vec4 u_color;
+uniform vec3 u_color;
 
 // with webgl 2, we now have to define an out that will be the color of the fragment
 out vec4 fragColor;
 
 void main(void) {
 
-    fragColor = u_color;
+    fragColor = vec4(u_color, 1.0);
 
 }
