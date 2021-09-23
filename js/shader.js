@@ -2,7 +2,9 @@
 
 import
 {
+
     loadExternalFile
+
 }
 from "./utils.js"
 
@@ -61,7 +63,7 @@ class Shader
     /**
      * Gets an attribute location by name
      * @param { String } name The name of the attribute
-     * @returns {} TODO The location of the attribute
+     * @returns { GLint } The location of the attribute
      */
     getAttributeLocation( name )
     {
@@ -73,7 +75,7 @@ class Shader
     /**
      * Gets a uniform location by name
      * @param { String } name The name of the uniform
-     * @returns {} TODO The location of the uniform
+     * @returns { GLint } The location of the uniform
      */
     getUniformLocation( name )
     {

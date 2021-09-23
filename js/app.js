@@ -50,7 +50,7 @@ class App
     addObject( object )
     {
 
-        // TODO
+        // TODO implement
 
     }
 
@@ -60,7 +60,7 @@ class App
     clearCanvas( )
     {
 
-        // TODO
+        // TODO implement
 
         console.log( "Cleared scene and canvas." )
 
@@ -73,7 +73,7 @@ class App
     initGl( )
     {
 
-        // TODO
+        // TODO implement
 
         let gl
 

@@ -70,9 +70,9 @@ class AppState
 
     /**
      * Updates the ui to represent the current interaction
-     * @param {*} category TODO
-     * @param {*} name TODO
-     * @param {*} value TODO
+     * @param { String } category The ui category to use; see this.ui_categories for reference
+     * @param { String } name The name of the item within the category
+     * @param { String | null } value The value to use if the ui element is not a toggle; sets the element to given string 
      */
     updateUI( category, name, value = null )
     {
@@ -90,7 +90,7 @@ class AppState
      * Updates a single ui element with given state and value
      * @param { Element } el The dom element to update
      * @param { Boolean } state The state (active / inactive) to update it to
-     * @param {*} value TODO
+     * @param { String | null } value The value to use if the ui element is not a toggle; sets the element to given string 
      */
     updateUIElement( el, state, value )
     {

@@ -8,7 +8,7 @@ import Shader from "./shader"
 class Drawable
 {
 
-    constructor( vertices, color, primitiveType, pointSize )
+    constructor( vertices, color, primitive_type, point_size )
     {
 
         this.vertices = vertices
@@ -16,17 +16,17 @@ class Drawable
 
         this.color = color
 
-        this.primitiveType = primitiveType
+        this.primitive_type = primitive_type
 
-        this.pointSize = pointSize
+        this.point_size = point_size
 
     }
 
     /**
-     * Creates buffers for vertex data // TODO plural?
+     * Creates buffer for vertex data
      * @param { WebGL2RenderingContext } gl The webgl2 rendering context
      */
-    createBuffers( gl )
+    createBuffer( gl )
     {
 
         // TODO create a vertex buffer and save it to this.vertices_buffer
@@ -39,18 +39,20 @@ class Drawable
      * Render loop for an individual drawable
      * @param { WebGL2RenderingContext } gl The webgl2 rendering context
      * @param { Shader } shader The shader to use for rendering
-     * @param { Array<Number> } resolution TODO double check
+     * @param { Array<Number> } resolution The current size of the canvas
      */
     render( gl, shader, resolution )
     {
+
         if ( this.vertices_buffer == null )
-            this.createBuffers( gl )
+            this.createBuffer( gl )
 
         // TODO bind the vertex buffer to the shader
 
         // TODO set uniform values 'u_color', 'u_pointSize', and 'u_resolution') in the shader using the shader.setUniform methods 
 
         // TODO call gl.drawArrays to draw your geometry
+
     }
 
 }
@@ -61,7 +63,7 @@ class Drawable
 class Point extends Drawable
 {
 
-    // TODO
+    // TODO implement
 
 }
 
@@ -71,7 +73,7 @@ class Point extends Drawable
 class Triangle extends Drawable
 {
 
-    // TODO
+    // TODO implement
 
 }
 
@@ -81,7 +83,7 @@ class Triangle extends Drawable
 class Square extends Drawable
 {
 
-    // TODO
+    // TODO implement
 
 }
 
@@ -91,7 +93,7 @@ class Square extends Drawable
 class Line extends Drawable
 {
 
-    // TODO
+    // TODO implement
 
 }
 
@@ -101,7 +103,7 @@ class Line extends Drawable
 class HLine extends Line
 {
 
-    // TODO
+    // TODO implement
 
 }
 
@@ -111,7 +113,7 @@ class HLine extends Line
 class VLine extends Line
 {
 
-    // TODO
+    // TODO implement
 
 }
 
