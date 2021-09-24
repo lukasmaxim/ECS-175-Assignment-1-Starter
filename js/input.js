@@ -133,7 +133,7 @@ class Input
 
     /**
      * Checks whether a given mouse button is down
-     * @param { String } key_code The event.key found here https://keycode.info
+     * @param { String } button The MouseEvent.button as specified here https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
      * @returns { Boolean } A boolean whether mouse button was down
      */
     isMouseDown( button )
@@ -145,7 +145,7 @@ class Input
 
     /**
      * Checks whether a given mouse button was clicked
-     * @param { String } key_code The event.key found here https://keycode.info
+     * @param { String } button The MouseEvent.button as specified here https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
      * @returns { Boolean } A boolean whether mouse button was clicked
      */
     isMouseClicked( button )
